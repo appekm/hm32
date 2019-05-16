@@ -7,41 +7,43 @@
     <title>hm32 : Javascript object</title>
     <style></style>
     <script>
-      //리터럴 표기법으로 사용자 객체 만들기
+      //리터럴 표기법으로 student객체 만들기
       var student = {
         // 프로퍼티 생성 및 초기화
-        owner: "김태은", // 계좌 주인
-        code: "hm32", // 계좌 코드
-        phone: "01035675618",
-        id: "20131198",
-        // 메소드 작성
-        inquiry: function() {
-          return this.balance;
-        }, // 잔금 조회
-        deposit: function(money) {
-          this.balance += money;
-        }, // 저금. money 만큼 저금
-        withdraw: function(money) {
-          // 예금 인출, money는 인출하고자 하는 액수
-          // money가 balance보다 작다고 가정
-          this.balance -= money;
+        name: "김태은",
+        id: "hm32",
+        born: "부산",
+        age: "27",
+        phone: "010 - 1234 - 5678",
+        money: 50000,
+                
+        moneyadd: function() {
+          return student.money + 20000;
+        },
+        moneysub: function(){
+          return student.money - 30000;
         }
+        
       };
     </script>
   </head>
 
   <body>
     <!-- 문서의 본문 텍스트, 이미지, 테이블, 자바스크립트 코드, 동영상 등 -->
-    <h3>리터럴 표기법으로 사용자 객체 만들기</h3>
+    <h3>리터럴 표기법으로 student 객체 만들기</h3>
     <hr />
+
     <script>
-      document.write("student : ");
-      document.write(student.owner + ", ");
-      document.write("<strong>HTML 번호 = " + student.code + ", ");
-      document.write("전화번호 = " + student.phone + "<br>");
-      document.write("학번 = " + student.id + "<br>");
-      document.write("내통장 잔고 " + student.inquiry() + "<br>");
-      student.deposit(300);
+      document.write("student   " +"<br>");
+      document.write(" 이름: " + student.name + "<br>");
+      document.write(" 아이디: " + student.id + "<br>");
+      document.write(" 출생지: " +student.born + "<br>");
+      document.write(" 나이: " +student.age + "<br>");
+      document.write(" 번호: " +student.phone + "<br>");
+      document.write(" 현찰: " +student.money + "<br><hr>");
+      
+      document.write("용돈 2만원을 받으면 나의 현찰은 " + student.moneyadd() + "원 입니다.<br>");
+      document.write("주유 3만원을 넣으면 나의 현찰은 " + student.moneysub() + "원 입니다.<br>");
     </script>
   </body>
 </html>
