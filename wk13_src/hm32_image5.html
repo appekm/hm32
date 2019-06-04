@@ -24,21 +24,21 @@
       var next = 1;
       function change(img) {
         img.src = imgs[next].src; // 이미지 변경
-        var nameSplit = files[next].split("/");
+        var nameSplit = files[next].split('/');
         var nameText = document.getElementById("name");
         var sizeText = document.getElementById("size");
-        nameText.innerHTML = "이미지 이름 : " + nameSplit[1]; //이벤트 객체의 프로퍼티 출력
-        sizeText.innerHTML = "폭 : " + img.width + "높이 : " + img.height;
+        nameText.innerHTML = "이미지 이름: " + nameSplit[1];
+        sizeText.innerHTML = "폭: " + img.width + " 높이: " + img.height;
         next++; // 다음 이미지
         next %= imgs.length; // 개수를 넘으면 처음으로
       }
-      function init(img) {
-        var nameSplit = filles[next - 1].split("/");
+      function init(img){
+        var nameSplit = files[next-1].split('/');
         var nameText = document.getElementById("name");
         var sizeText = document.getElementById("size");
-        img.src = files[next - 1];
-        nameText.innerHTML = "이미지 이름 : " + nameSplit[1];
-        sizeText.innerHTML = "폭 : " + img.width + " 높이 : " + img.height;
+        img.src = files[next-1];
+        nameText.innerHTML = "이미지 이름: " +nameSplit[1];
+        sizeText.innerHTML = "폭: "+ img.width +" 높이: " + img.height;
       }
     </script>
   </head>
@@ -50,13 +50,16 @@
     이미지를 클릭하면 다음 이미지와 정보를 보여줍니다.
     <p>
       <img
-        style="border:20px ridge wheat"
+        style="border:20px ridge rgb(184, 179, 245)"
         src="media/trip1.png"
         alt="."
-        width="250"
-        height="250"
+        width=""
+        height=""
         onclick="change(this)"
+        onload="init(this)"
       />
+      <p id="name"></p>
+      <p id="size"></p>
     </p>
   </body>
 </html>
