@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- 이 부분은 주석문입니다. 웹 브라우저는 주석을 화면에 출력하지 않습니다. -->
+<html>
+  <head>
+    <!-- 문서제목, 자바스크립트 코드, CSS 스타일 정의, 메타데이터정의 -->
+    <meta charset="utf-8" />
+    <title>나의 하루일과</title>
+    <style></style>
+    <script>
+      function change() {
+        var spanArray = document.getElementsByTagName("span");
+        for (var i = 0; i < spanArray.length; i++) {
+          var span = spanArray[i];
+          span.style.color = "skyblue";
+          span.style.fontSize = "25px";
+          span.style.fontWeight = "bold";
+        }
+        
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- 문서의 본문 텍스트, 이미지, 테이블, 자바스크립트 코드, 동영상 등 -->
+    <h2>
+     나의하루일과
+     
+    </h2>
+    <hr />
+    <button onclick="change()">
+      클릭
+    </button>
+
+    <table border="1">
+      <caption>
+        하루 일과
+      </caption>
+      <thead>
+        <tr>
+          <th>시간</th>
+          <th>하는 일</th>
+          <th>실천여부</th>
+        </tr>
+      </thead>
+
+      <tbody>
+    
+        <tr><td>09:00 ~ 13:00</td><td><span>오전수업</span></td><td>O</td></tr>
+        <tr><td>13:00 ~ 14:00</td><td><span>점심식사</span></td><td>X</td></tr>   
+        <tr><td>14:00 ~ 18:00</td><td><span>오후수업</span></td><td>O</td></tr>
+        <tr><td>18:00 ~ 19:00</td><td><span>퇴근</span></td><td>O</td></tr>
+        <tr><td>19:00 ~ 20:00</td><td><span>저녁식사</span></td><td>O</td></tr>
+        <tr><td>20:00 ~ 23:00</td><td><span>개인정비</span></td><td>O</td></tr>
+        <tr><td>24:00 ~ </td><td><span>취침</td><td>O</td></tr>
+
+
+</tbody>
+    </table>
+  </body>
+</html>
